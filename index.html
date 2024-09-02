@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMIGOS POR EL MUNDO</title>
+<style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+        }
+        header {
+            background-color: transparent;
+            color: #fff;
+            padding: 10px 0;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #007BFF; /* Título principal en azul */
+            background-color: transparent;
+        }
+        .banner {
+            background-color: #ff4081;
+            color: #fff;
+            padding: 15px;
+            font-size: 1.5em;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .product {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 15px;
+            width: 300px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .product h2 {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+        .product p {
+            font-size: 1em;
+            margin: 10px 0;
+            color: #666;
+        }
+        .product button {
+            background-color: #ff4081; /* Color rosa para el mes de las madres */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .product button:hover {
+            background-color: #e91e63; /* Un rosa más intenso al pasar el mouse */
+        }
+        @media (max-width: 768px) {
+            .products {
+                flex-direction: column;
+                align-items: center;
+            }
+            .product {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+<h1>AMIGOS POR EL MUNDO</h1>
+<div class="banner">¡20% de descuento por el Mes de las Madres! 🌸</div>
+</header>
+<section class="products">
+<div class="product">
+<img src="https://i.imgur.com/s4eOoS3.jpeg" alt="Producto 1">
+<h2>Camiseta Nebulosa</h2>
+<p>Sumérgete en la inmensidad del cosmos con esta camiseta que captura la belleza de las nebulosas. ¡Perfecta para destacar en cualquier ocasión!</p>
+<button onclick="comprar('Producto 1')">Comprar ahora</button>
+</div>
+<div class="product">
+<img src="https://i.imgur.com/NS1USLE.jpeg" alt="Producto 2">
+<h2>Pantalón Estrella Fugaz</h2>
+<p>Deslumbra con cada paso que des con estos pantalones inspirados en las estrellas fugaces. Cómodos, modernos y llenos de estilo.</p>
+<button onclick="comprar('Producto 2')">Comprar ahora</button>
+</div>
+<div class="product">
+<img src="https://i.imgur.com/ghOSKhx.jpeg" alt="Producto 3">
+<h2>Sudadera Vía Láctea</h2>
+<p>Lleva la majestuosidad de la galaxia contigo. Esta sudadera es ideal para los soñadores que buscan confort sin renunciar al estilo.</p>
+<button onclick="comprar('Producto 3')">Comprar ahora</button>
+</div>
+<div class="product">
+<img src="https://i.imgur.com/yqjjabC.jpeg" alt="Producto 4">
+<h2>Chaqueta Constelación</h2>
+<p>Brilla con la elegancia de las estrellas. Esta chaqueta combina diseño sofisticado con un toque cósmico, perfecta para cualquier look.</p>
+<button onclick="comprar('Producto 4')">Comprar ahora</button>
+</div>
+<div class="product">
+<img src="https://i.imgur.com/O2MHy4P.jpeg" alt="Producto 5">
+<h2>Vestido Galaxia</h2>
+<p>Explora el universo con este vestido que encapsula la belleza de las galaxias. Un diseño único para quienes buscan deslumbrar en cualquier ocasión.</p>
+<button onclick="comprar('Producto 5')">Comprar ahora</button>
+</div>
+</section>
+<script>
+        function comprar(producto) {
+            const numeroWhatsApp = "16282167264"; // Reemplaza con el número de WhatsApp del vendedor
+            const mensaje = `👋 ¡Hola! Estoy interesado(a) en el ${producto} que vi en su tienda 🛍️. ¿Podrías darme más información? 😊`;
+            const url = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${encodeURIComponent(mensaje)}`;
+            window.location.href = url;
+            
+            // Enviar evento de Google Analytics
+            if (typeof gtag === 'function') {
+                gtag('event', 'Compra', {
+                    'event_category': 'Producto',
+                    'event_label': producto
+                });
+            }
+        }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'8bc787e0b9081e9c',t:'MTcyNTIxNzUxNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
